@@ -1,0 +1,80 @@
+@use '@angular/material' as mat;
+@import '@angular/material/theming';
+
+@include mat.core();
+
+$primary-color : #05C3DD;
+
+$wamtsol-blue: (
+ 50: #05C3DD,
+ 100: #dddd,
+ 200: #eee,
+ 300: #000,
+ // ... continues to 900
+ contrast: (
+   50: rgba(255,255,255),
+   100: rgba(black, 0.87),
+   200: rgba(black, 0.87),
+   300: white,
+   // ... continues to 900
+ )
+);
+$wamtsol-primary: mat.define-palette($wamtsol-blue, 50, 100, 200);
+
+$wamtsol-red: (
+ 50: #ea5437,
+ 100: #dddd,
+ 200: #eee,
+ 300: #000,
+ // ... continues to 900
+ contrast: (
+   50:rgba(255,255,255),
+   100: rgba(black, 0.87),
+   200: rgba(black, 0.87),
+   300: white,
+   // ... continues to 900
+ )
+);
+$wamtsol-accent: mat.define-palette($wamtsol-red, 50, 100, 200);
+
+$wamtsol-theme: mat.define-light-theme((
+ color: (
+   primary: $wamtsol-primary,
+   accent: $wamtsol-accent,
+ )
+));
+
+@include mat.all-component-themes($wamtsol-theme);
+
+// Include the theme mixins for other components you use here.
+
+$dark-app-theme: mat-dark-theme((
+  color: (
+    primary: mat-palette($mat-cyan),
+    accent: mat-palette($mat-blue-gray, A200, A100, A400),
+    warn: mat-palette($mat-amber),
+  )
+));
+
+.dark-theme {
+  @include angular-material-color($dark-app-theme);
+  .logo {
+    a{
+      h2 {
+        color: #fff;
+      }
+    } 
+  }
+}
+.light-theme{
+  .logo {
+    a{
+      h2 {
+        color: #000;
+      }
+    } 
+  }
+  .sidenav {
+    background-color: $primary-color;
+  }
+}

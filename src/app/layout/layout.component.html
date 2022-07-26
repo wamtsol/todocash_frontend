@@ -1,0 +1,58 @@
+<mat-sidenav-container class="sidenav-container" *ngIf="!fullPageTemplate">
+	<mat-sidenav #drawer class="sidenav" fixedInViewport
+			[attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+			[mode]="(isHandset$ | async) ? 'over' : 'side'"
+			[opened]="(isHandset$ | async) === false">
+		<mat-toolbar>
+			<div class="logo">
+				<a routerLink="/">
+					<h2>Wamtsol</h2>
+				</a>
+			</div>
+		</mat-toolbar>
+		<mat-nav-list class="main-menu">
+            <a mat-list-item><mat-icon>people</mat-icon>Dashboard</a>
+			<a mat-list-item><mat-icon>people</mat-icon>Users</a>
+		
+			<a mat-list-item><mat-icon>logout</mat-icon>Log Out</a>
+		</mat-nav-list>
+	</mat-sidenav>
+	<mat-sidenav-content>
+		<mat-toolbar color="accent">
+			<button
+				type="button"
+				aria-label="Toggle sidenav"
+				mat-icon-button
+				(click)="drawer.toggle()"
+				*ngIf="isHandset$ | async">
+				<mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+			</button>
+		</mat-toolbar>
+		<!-- Add Content Here -->
+		<mat-checkbox class="example-margin">Check me!</mat-checkbox>
+		<button mat-raised-button color="primary">Primary</button>
+		<mat-card class="example-card">
+			<mat-card-header>
+			  <div mat-card-avatar class="example-header-image"></div>
+			  <mat-card-title>Shiba Inu</mat-card-title>
+			  <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+			</mat-card-header>
+			<img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+			<mat-card-content>
+			  <p>
+				The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+				A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+				bred for hunting.
+			  </p>
+			</mat-card-content>
+			<mat-card-actions>
+			  <button mat-button>LIKE</button>
+			  <button mat-button>SHARE</button>
+			</mat-card-actions>
+		  </mat-card>
+		<router-outlet></router-outlet>
+	</mat-sidenav-content>
+</mat-sidenav-container>
+<div class="container-full" *ngIf="fullPageTemplate">
+	<router-outlet></router-outlet>
+</div>

@@ -4,6 +4,7 @@
 @include mat.core();
 
 $primary-color : #05C3DD;
+$white-color: #fff;
 
 $wamtsol-blue: (
  50: #05C3DD,
@@ -76,5 +77,8 @@ $dark-app-theme: mat-dark-theme((
   }
   .sidenav {
     background-color: $primary-color;
+  }
+  .main-menu a {
+    color: $white-color !important;
   }
 }

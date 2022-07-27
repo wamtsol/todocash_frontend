@@ -17,11 +17,17 @@ export class LayoutComponent implements OnInit {
     shareReplay()
   );
   fullPageTemplate = false;
+  dropdowns:any = {
+	}
 
   constructor(
     private breakpointObserver: BreakpointObserver,
   ) { 
     
+  }
+
+  toggle(dropdown: string){
+    this.dropdowns[dropdown] = !this.dropdowns[dropdown];
   }
 
   ngOnInit(): void {

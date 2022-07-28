@@ -60,6 +60,16 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   width: 240px;
   height: 100%;
 }
+.mat-form-field-appearance-outline{
+  .mat-form-field-label {
+    top: 30px;
+  }
+  .mat-form-field-infix{
+    border-top: 0.3em solid transparent !important;
+    vertical-align: middle;
+  
+  }
+}
 .mat-toolbar-row, .mat-toolbar-single-row {
   height: auto !important;
 }
@@ -130,8 +140,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
       margin: 0;
       padding-bottom: 15px;
     }
-    ::ng-deep .mat-form-field-appearance-outline{
-      ::ng-deep .mat-form-field-infix{
+    .mat-form-field-appearance-outline{
+      .mat-form-field-infix{
         border-top: 0.3em solid transparent !important;
         padding: 12px 0;
         font-size: 14px;
@@ -193,6 +203,11 @@ table {
     }
   }
 }
+.general-form{
+  .mat-form-field-outline {
+    background: #fff;
+  }
+} 
 @media (min-width:768px){
   .col-md-auto{flex:0 0 auto;width:auto}
   .col-md-1{flex:0 0 auto;width:8.33333333%;}

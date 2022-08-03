@@ -82,3 +82,19 @@ $dark-app-theme: mat-dark-theme((
     color: $white-color !important;
   }
 }
+.content {
+  .table-header {
+    background-color: $primary-color;
+    .brand-title{
+      h2 {
+        color: $white-color;
+      }
+    }
+    .brands-button {
+      float: right;
+      .mat-focus-indicator.mat-raised-button.mat-button-base {
+        color: $white-color;
+      }
+    }
+  }
+}
